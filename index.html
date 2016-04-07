@@ -1,0 +1,31 @@
+<html ng-app='BookFace'>
+	<head>
+		<title></title>
+		<link rel='stylesheet' href='./node_modules/bootstrap/dist/css/bootstrap.css'/>
+		<link rel="stylesheet" href="client/css/main.css"/>
+	</head>
+		<nav class='navbar navbar-default navbar-fixed-top' ng-controller='NavigationController'>
+			<div class='container'>
+				<div ng-show='!loggedIn'>
+					<input type='text' ng-model='login.email'>  <input type='password' ng-model='login.password'> <button ng-click="logUserIn()">Login</button> <a ui-sref='signUp'>Create An Account</a>					
+				</div>
+				<div ng-show='loggedIn'>
+						<a ui-sref='editProfile'>Edit Profile</a>
+				</div>
+			</div>
+		</nav>
+	<body>
+
+		<div ui-view></div>
+	</body>
+		<script src="node_modules/angular/angular.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+		<script src='client/app.js'></script>
+		<script src='client/partials/signup-controller.js'></script>
+		<script src='client/navigation/navigation-controller.js'></script>
+		<script src='client/profile/edit-profile-controller.js'></script>
+		<!-- Libraries -->
+		<script src='node_modules/ng-file-upload/dist/ng-file-upload-all.js'></script>
+		<script src='node_modules/ng-file-upload/dist/ng-file-upload.js'></script>
+		<script src='node_modules/ng-file-upload/dist/ng-file-upload-shim.js'></script>
+</html>
